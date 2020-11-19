@@ -1,17 +1,22 @@
 import axios from 'axios'
+import urls from '/public/urlconf.json'
 import {
   requestSuccess,
   requestFail,
   responseSuccess,
   responseFail
 } from '@conf'
-
 // 站点统一的配置
+let webUrL = window.location.origin
+let urls = urls.find(item => {
+  return (item.webUrL = webUrL)
+})
+
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_HOST,
+  baseURL: urls ? urls.apiUrl : process.env.VUE_APP_HOST,
   timeout: 15000,
   contentType: 'application/x-www-form-urlencoded',
-  complete: function(xhr, status) {
+  complete: function (xhr, status) {
     if (status === 'timeout') {
       xhr.abort()
     }

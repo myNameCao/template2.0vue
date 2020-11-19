@@ -1,0 +1,14 @@
+{
+  "url": [
+    {
+      "webUrL": "http://localhost:8080",
+      "apiUrl": "http://www.baidu.com",
+      "corpId": ""
+    },
+    {
+      "webUrL": "http://qapczx.xiaoyangedu.net:8091",
+      "apiUrl": "http://www.baidu.com",
+      "corpId": "ding893f6790e7c18561ee0f45d8e4f7c288"
+    }
+  ]
+}
