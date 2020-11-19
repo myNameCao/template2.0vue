@@ -1,5 +1,5 @@
 import axios from 'axios'
-import urls from '/public/urlconf.json'
+import urlconf from '@conf/urlconf.json'
 import {
   requestSuccess,
   requestFail,
@@ -8,8 +8,8 @@ import {
 } from '@conf'
 // 站点统一的配置
 let webUrL = window.location.origin
-let urlmy = urls.find(item => {
-  return (item.webUrL = webUrL)
+let urlmy = urlconf.urls.find(item => {
+  return item.webUrL === webUrL
 })
 const instance = axios.create({
   baseURL: urlmy ? urlmy.apiUrl : process.env.VUE_APP_HOST,
