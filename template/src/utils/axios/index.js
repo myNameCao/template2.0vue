@@ -8,12 +8,11 @@ import {
 } from '@conf'
 // 站点统一的配置
 let webUrL = window.location.origin
-let urls = urls.find(item => {
+let urlmy = urls.find(item => {
   return (item.webUrL = webUrL)
 })
-
 const instance = axios.create({
-  baseURL: urls ? urls.apiUrl : process.env.VUE_APP_HOST,
+  baseURL: urlmy ? urlmy.apiUrl : process.env.VUE_APP_HOST,
   timeout: 15000,
   contentType: 'application/x-www-form-urlencoded',
   complete: function (xhr, status) {
