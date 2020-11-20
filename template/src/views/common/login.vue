@@ -9,35 +9,24 @@
           </div>
         </div>
         <div class="login-box">
-          <div class="login-box-logo" :style="{ height: '60px' }">
-            <img src="./img/Login-logo.png" class="school-logo" />
-          </div>
+          <div class="login-box-logo" :style="{ height: '60px' }"></div>
           <div class="login-box-content" :style="{ marginTop: '20px' }">
             <div class="login-ibox">
               <div
                 id="loginBoxMain"
                 class="login-box-main"
-                style="margin-top:20px;"
+                style="margin-top: 20px"
               >
                 <input v-model="username" placeholder="账号" type="text" />
                 <input v-model="keyword" placeholder="密码" type="password" />
-                <button class="login-btn" @click="loginWeb">
-                  登陆
-                </button>
+                <button class="login-btn" @click="loginWeb">登陆</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <div class="content-nav-box">
-        <p v-cloak>
-          Copyright © 2016-{{ enddate }} 晓羊教育
-          <a @click="toXYIndex">www.xiaoyangedu.com</a> 版权所有
-        </p>
-      </div>
-    </div>
+    <div class="footer"></div>
   </div>
 </template>
 <script>

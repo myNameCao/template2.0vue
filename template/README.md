@@ -1,20 +1,23 @@
-# 项目
+# 下载项目依赖
 
-```
 yarn install
 
-```
+# vscode 需要下载插件
 
-### Compiles and hot-reloads for development
+1. Prettier - Code formatter
+2. Git History
 
-```
+## Compiles and hot-reloads for development
+
+```shell
 yarn serve
 ```
 
-### Compiles and minifies for production
+## Compiles and minifies for production
 
-```
+```shell
 yarn build
+
 ```
 
 # axios
