@@ -1,6 +1,6 @@
 # 下载项目依赖
 
-yarn install
+yarn or npm install
 
 # vscode 需要下载插件
 
