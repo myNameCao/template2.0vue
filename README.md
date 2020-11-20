@@ -4,7 +4,7 @@
 
 npm install -g @vue/cli
 
-#### or
+## or
 
 yarn global add @vue/cli（推荐）
 
