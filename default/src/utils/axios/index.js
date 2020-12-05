@@ -1,20 +1,17 @@
 import axios from 'axios'
-import urlconf from '@conf/urlconf.json'
+
 import {
   requestSuccess,
   requestFail,
   responseSuccess,
   responseFail
 } from '@conf'
+
 // 站点统一的配置
-let webUrL = window.location.origin
-let urlmy = urlconf.urls.find(item => {
-  return item.webUrL === webUrL
-})
 const instance = axios.create({
-  baseURL: urlmy ? urlmy.apiUrl : process.env.VUE_APP_HOST,
+  baseURL: process.env.VUE_APP_HOST,
   timeout: 15000,
-  contentType: 'application/x-www-form-urlencoded',
+  contentType: 'application/json',
   complete: function (xhr, status) {
     if (status === 'timeout') {
       xhr.abort()
@@ -33,6 +30,8 @@ export default async P => {
     instance({
       method: P.type || 'get',
       url: P.url,
+      loading: P.loading,
+      landscape: P.landscape,
       params: P.params ? P.params : null,
       data: P.data ? P.data : null
     })
