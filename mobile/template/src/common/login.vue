@@ -47,9 +47,7 @@
       this.getAccountInfo()
     },
     methods: {
-      toXYIndex() {
-        window.open('http://www.xiaoyangedu.com')
-      },
+      toXYIndex() {},
       // 获取所有校区信息
       getAccountInfo() {
         let _this = this
