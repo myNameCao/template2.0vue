@@ -1,5 +1,4 @@
-import router from '@router'
-
+import router from '@/router'
 export default {
   200() {
     router.replace({ path: '/error401' })

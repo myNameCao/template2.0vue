@@ -3,4 +3,6 @@
 export function Dialog() {}
 export function Notify() {}
 export function loading() {}
-export function closeloading() {}
+export function clearTipz() {}
+export function clearTip() {}
+export default function Toast() {}
