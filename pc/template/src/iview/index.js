@@ -1,4 +1,5 @@
 import Vue from 'vue'
-import iView from 'iview'
-import 'iview/dist/styles/iview.css'
-Vue.use(iView)
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+Vue.config.productionTip = false
+Vue.use(Antd)
