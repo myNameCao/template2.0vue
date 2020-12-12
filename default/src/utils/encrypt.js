@@ -4,8 +4,8 @@ import store from 'store'
 
 import { options } from '@conf'
 export function encrypt(str) {
-  var key = CryptoJS.enc.Base64.parse(options.key) // key 要和后台一致
-  var iv = CryptoJS.enc.Base64.parse(options.iv) // iv 要和后台一致
+  let key = CryptoJS.enc.Base64.parse(options.key) // key 要和后台一致
+  let iv = CryptoJS.enc.Base64.parse(options.iv) // iv 要和后台一致
   str = CryptoJS.enc.Utf8.parse(str)
   return CryptoJS.DES.encrypt(str, key, {
     iv: iv,
@@ -13,10 +13,10 @@ export function encrypt(str) {
   }).toString()
 }
 // 登录密码解密
-export function decrypt(str) {
-  var key = CryptoJS.enc.Base64.parse(options.key)
-  var iv = CryptoJS.enc.Base64.parse(options.iv)
-  var decryptObj = CryptoJS.DES.decrypt(str, key, {
+export const decrypt = str => {
+  let key = CryptoJS.enc.Base64.parse(options.key)
+  let iv = CryptoJS.enc.Base64.parse(options.iv)
+  let decryptObj = CryptoJS.DES.decrypt(str, key, {
     iv: iv,
     mode: CryptoJS.mode.CBC
   })
@@ -44,6 +44,7 @@ export const testIpt = data => {
   let reg = /([^\s])/g
   return reg.test(data)
 }
+
 // 时间格式化
 export function DateFormat(date, format) {
   // time时间格式化
@@ -51,7 +52,7 @@ export function DateFormat(date, format) {
 
   if (typeof date === 'string') {
     // 如果是字符串转换为日期型
-    date = new Date('2008-01-01 ' + date)
+    date = new Date(date)
   }
 
   if (!format) {
@@ -77,7 +78,7 @@ export function DateFormat(date, format) {
     )
   }
   // 其他格式处理
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-lets
   for (let k in obj) {
     if (new RegExp('(' + k + ')').test(format)) {
       format = format.replace(
