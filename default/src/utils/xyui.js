@@ -3,6 +3,8 @@
 export function Dialog() {}
 export function Notify() {}
 export function loading() {}
-export function clearTipz() {}
-export function clearTip() {}
-export default function Toast() {}
+export function clearLoading() {}
+export let Toast = {
+  fail() {}
+} // 提示
+export default Toast

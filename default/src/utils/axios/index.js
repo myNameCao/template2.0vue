@@ -12,7 +12,7 @@ const instance = axios.create({
   baseURL: process.env.VUE_APP_HOST,
   timeout: 15000,
   contentType: 'application/json',
-  complete: function (xhr, status) {
+  complete(xhr, status) {
     if (status === 'timeout') {
       xhr.abort()
     }
