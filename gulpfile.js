@@ -1,6 +1,5 @@
 const { watch, src, dest } = require('gulp')
 const del = require('del')
-
 function defaultTask() {
   const watcher = watch(['./test/**/*'])
   watcher.on('change', function (path, stats) {
@@ -15,21 +14,16 @@ function defaultTask() {
   })
 }
 function delfile(path) {
-  var allFile = path.split('/')
-  var watchFile = allFile[0] // 获得修改的文件名称
-  var distPash = path.replace(watchFile, '') //压缩的文件路径
-  // console.log(change_path, 'del')
-  console.log(distPash)
+  let allFile = path.split('/')
+  let watchFile = allFile[0] // 获得修改的文件名称
+  let distPash = path.replace(watchFile, '') //压缩的文件路径
   del('default' + distPash)
 }
 function copy(path) {
-  var allFile = path.split('/')
-  var watchFile = allFile[0] // 获得修改的文件名称
-  var changeFile = allFile[allFile.length - 1] // 获得修改的文件名称
-  var distPash = path.replace(watchFile, '').replace(changeFile, '') //压缩的文件路径
-  // console.log(change_path, 'del')
-  console.log(distPash)
-
-  return src(path).pipe(dest(distPash))
+  let allFile = path.split('/')
+  let watchFile = allFile[0] // 获得监听的根文件
+  let changeFile = allFile[allFile.length - 1] // 获得改变的文件
+  let distPash = path.replace(watchFile, '').replace(changeFile, '') //压缩的文件路径
+  return src(path).pipe(dest('default' + distPash))
 }
 exports.default = defaultTask
