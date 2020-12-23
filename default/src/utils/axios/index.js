@@ -9,10 +9,10 @@ import {
 
 // 站点统一的配置
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_HOST,
+  baseURL: window.config.apiUrl || process.env.VUE_APP_HOST,
   timeout: 15000,
   contentType: 'application/json',
-  complete(xhr, status) {
+  complete: function(xhr, status) {
     if (status === 'timeout') {
       xhr.abort()
     }

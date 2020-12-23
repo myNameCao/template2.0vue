@@ -78,7 +78,7 @@ export function DateFormat(date, format) {
     )
   }
   // 其他格式处理
-  // eslint-disable-next-line no-unused-lets
+
   for (let k in obj) {
     if (new RegExp('(' + k + ')').test(format)) {
       format = format.replace(

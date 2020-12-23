@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 import baseApi from '@lib/baseApi'
-import Toast, { loading, clearLoading } from '@utils/xyui'
+import Toast, { loading, clearTip } from '@utils/xyui'
 import errorHander from './errorHander'
 let uid = 0
 let list = {}
@@ -29,7 +29,7 @@ export const requestFail = requestError => {
 export const responseSuccess = responseObj => {
   delete list[responseObj.config.uid]
   if (!Object.keys(list).length) {
-    setTimeout(clearLoading, 1000)
+    setTimeout(clearTip, 1000)
   }
   if (!responseObj.data.success) {
     setTimeout(Toast.fail(responseObj.data.msg), 1500)
@@ -37,8 +37,9 @@ export const responseSuccess = responseObj => {
   return responseObj.data
 }
 export const responseFail = responseError => {
+  delete list[responseError.config.uid]
   // 响应失败，可根据 responseError.message 和 responseError.response.status 来做监控处理
-  clearLoading()
+  clearTip()
   let Fail = errorHander[responseError.response.status]
   Fail && Fail()
   return Promise.reject(responseError)

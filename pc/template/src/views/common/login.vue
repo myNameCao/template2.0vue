@@ -1,7 +1,9 @@
 <template>
   <div class="login-div">
     <div class="login-top">
-      <h2 class="title">组题库</h2>
+      <h2 class="title">
+        模版
+      </h2>
     </div>
     <form class="form">
       <input style="display: none" type="text" name="fakeusernameremembered" />
@@ -57,8 +59,6 @@
               name="password"
               clearable
               placeholder="请输入登录密码"
-              @focus="readonlyHandler"
-              @change="inputHandler"
               @keyup.13="loginHandler"
             />
           </div>
@@ -75,8 +75,8 @@
 </template>
 
 <script>
+  import axios, { setCookie } from '@utils'
   export default {
-    // inject: ['reload'],  // 注入 reload 方法
     data() {
       return {
         inputText: '',
@@ -92,59 +92,27 @@
         loginStatus: false,
         loading: false,
         redirect: undefined,
-        yzUserName: '',
-        isShowYZ: false
+        yzUserName: ''
       }
     },
     watch: {
       $route: {
-        handler: function (route) {
+        handler: function(route) {
           this.redirect = route.query && route.query.redirect
         },
         immediate: true
       }
     },
     created() {
-      setTimeout(function () {
+      setTimeout(function() {
         document.body.classList.add('on-start')
       }, 100)
-      setTimeout(function () {
+      setTimeout(function() {
         document.body.classList.add('document-loaded')
       }, 1800)
     },
-    mounted() {
-      this.loadCookies()
-    },
+    mounted() {},
     methods: {
-      loadCookies() {
-        let user = JSON.parse(window.localStorage.getItem('mark_web_user'))
-        // console.log(user);
-        if (user != null) {
-          this.params.userCode = user.userCode
-          if (user.isRememberPwd == true) {
-            this.params.password = user.password
-            this.params.isRememberPwd = true
-          } else {
-            this.params.isRememberPwd = false
-          }
-        }
-      },
-      inputHandler: function (e) {
-        this.inputText = e.target.value
-        this.$emit('input', e.target.value)
-        this.inputType = 'password'
-        if (e.target.value == '') {
-          this.inputType = 'text'
-          this.readonlyHandler(e)
-        }
-      },
-      readonlyHandler: function () {
-        this.readonly = true
-        let timer = setTimeout(() => {
-          clearTimeout(timer)
-          this.readonly = false
-        }, 0)
-      },
       loginHandler() {
         this.errorTip = ''
         if (this.params.userCode == '') {
@@ -155,45 +123,25 @@
           this.errorTip = '请输入登录密码!'
           return
         }
+        this.login()
       },
-      loginResult(user) {
-        // 要记录缓存的数据记录是否记住密码
-        user['isRememberPwd'] = this.params.isRememberPwd
-        user['password'] = this.params.password
-        // this.$cookies.set('mark_web_username', token, '2h')
-        // -1:永久 0:立即删除 秒:s 分:min 时:h 天:d 月:m 年:y
-        localStorage.setItem('mark_web_user', JSON.stringify(user))
-        this.$router.push('/')
-      },
-      manyNamesHandler() {
-        this.errorTip = ''
-        if (this.user.name == '') {
-          this.errorTip = '请输入姓名!'
-          return
+      login() {
+        let _this = this
+        let data = {
+          userName: this.params.userCode,
+          password: this.params.password,
+          ClientInfo: 'NZClient',
+          remember: true
         }
-        let users = this.userInfo
-        let relName = this.user.name
-        let result = false
-        if (users != undefined && users.length > 1) {
-          var user = {}
-          for (let i = 0; i < users.length; i++) {
-            if (users[i].name === relName) {
-              user = users[i]
-              result = true
-              break
-            }
-          }
-          if (result) {
-            this.$cookies.set('mark_web_username', user.name, '7d')
-            localStorage.setItem('mark_web_user', JSON.stringify(user))
-            this.$router.push('/')
-          } else {
-            this.errorTip = '该用户不存在!'
-          }
-        }
-      },
-      cleanUserInfo() {
-        this.userInfo = []
+        axios({
+          type: 'post',
+          url: 'login',
+          loading: true,
+          data
+        }).then(res => {
+          setCookie('USER_LOGIN_NAME', res.data.Token)
+          _this.$router.push('/yunQuestion')
+        })
       }
     }
   }
