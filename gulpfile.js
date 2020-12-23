@@ -18,7 +18,6 @@ const delfile = path => {
   let allFile = path.split('/')
   let watchFile = allFile[0]
   let distPash = path.replace(watchFile, '')
-  console.log(path, distPash)
   if (allFile.includes('views')) {
     let topath = allFile.includes('pc_test') ? 'pc' : 'mobile'
     del(`${topath}/template${distPash}`)
