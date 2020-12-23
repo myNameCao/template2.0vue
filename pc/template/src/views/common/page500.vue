@@ -1,20 +1,15 @@
 <template>
   <div class="page_sigle">
     <div class="tip">
-      <img :src="url" alt="500" class="imgtip" />
       <div>系统维护升级中</div>
     </div>
   </div>
 </template>
-
 <script>
   // import axios, { setCookie } from '@utils'
-  import img500 from '@static/img/page500.png'
   export default {
     data() {
-      return {
-        url: img500
-      }
+      return {}
     },
 
     mounted() {}

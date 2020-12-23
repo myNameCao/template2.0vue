@@ -6,15 +6,25 @@ const copy = path => {
   let watchFile = allFile[0] // 获得监听的根文件
   let changeFile = allFile[allFile.length - 1] // 获得改变的文件
   let distPash = path.replace(watchFile, '').replace(changeFile, '') //压缩的文件路径
-  return src(path).pipe(dest('default' + distPash))
-  console.log(path)
+  if (allFile.includes('views')) {
+    let topath = allFile.includes('pc_test') ? 'pc' : 'mobile'
+    return src(path).pipe(dest(`${topath}/template${distPash}`))
+  } else {
+    return src(path).pipe(dest('default' + distPash))
+  }
+  console.log(allFile)
 }
 const delfile = path => {
   let allFile = path.split('/')
   let watchFile = allFile[0]
   let distPash = path.replace(watchFile, '')
-  console.log(path)
-  del('default' + distPash)
+  console.log(path, distPash)
+  if (allFile.includes('views')) {
+    let topath = allFile.includes('pc_test') ? 'pc' : 'mobile'
+    del(`${topath}/template${distPash}`)
+  } else {
+    del('default' + distPash)
+  }
 }
 
 const pcTask = () => {
@@ -34,7 +44,6 @@ const pcTask = () => {
 const mobileTask = () => {
   console.log('监听mobile_test....')
   const watcher = watch(['./mobile_test/**/*'])
-
   watcher.on('change', path => {
     delfile(path)
     copy(path)

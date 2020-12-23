@@ -13,10 +13,16 @@ const common = [
     component: () => import('@view/common/login.vue')
   },
   {
-    path: '/home',
-    name: 'home',
-    meta: { title: 'HOME', requireAuth: true },
-    component: () => import('@view/common/home.vue')
+    path: '/404',
+    name: '404',
+    meta: { title: '404', requireAuth: false },
+    component: () => import('@view/common/page404.vue')
+  },
+  {
+    path: '/500',
+    name: '500',
+    meta: { title: '500', requireAuth: false },
+    component: () => import('@view/common/page500.vue')
   }
 ]
 export default common

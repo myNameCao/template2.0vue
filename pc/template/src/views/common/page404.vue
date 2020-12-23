@@ -1,7 +1,6 @@
 <template>
   <div class="page_sigle">
     <div class="tip">
-      <img :src="url" alt="404" class="imgtip" />
       <div>抱歉！您访问的页面不存在</div>
     </div>
   </div>
@@ -9,7 +8,6 @@
 
 <script>
   // import axios, { setCookie } from '@utils'
-  import img404 from '@static/img/page404.png'
   export default {
     data() {
       return {
@@ -26,6 +24,7 @@
     height: 100%;
     position: relative;
   }
+
   .tip {
     position: absolute;
     font-size: 18px;

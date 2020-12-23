@@ -245,11 +245,9 @@
     padding: 4px;
     border: 1px solid #ff4d51;
   }
-
   .error-tip > i {
     margin: 0 4px;
   }
-
   .forget-div {
     font-size: 14px;
     color: white;
