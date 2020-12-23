@@ -2,7 +2,7 @@
   "urls": [
     {
       "webUrL": "http://localhost:8080",
-      "apiUrl": "http://qaxyexamapi.xycxedu.cn:16580"
+      "apiUrl": ""
     }
   ]
 }
