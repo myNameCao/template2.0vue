@@ -18,7 +18,7 @@ const delfile = path => {
 }
 
 const pcTask = () => {
-  console.log('pc项目')
+  console.log('监听pc_test....')
   const watcher = watch(['./pc_test/**/*'])
   watcher.on('change', path => {
     delfile(path)
@@ -32,8 +32,9 @@ const pcTask = () => {
   })
 }
 const mobileTask = () => {
+  console.log('监听mobile_test....')
   const watcher = watch(['./mobile_test/**/*'])
-  console.log('手机项目')
+
   watcher.on('change', path => {
     delfile(path)
     copy(path)
@@ -47,3 +48,5 @@ const mobileTask = () => {
 }
 
 exports.default = pcTask
+exports.pcTask = pcTask
+exports.mobileTask = mobileTask
