@@ -43,7 +43,7 @@ module.exports = {
     // 禁止不规则的空白。
     'no-irregular-whitespace': 2,
     // 字符串开头和结束使用单引号
-    'quotes': [2, 'single'],
+    quotes: [2, 'single'],
     // 禁止冗余的括号
     'no-extra-parens': 2,
     // console
@@ -97,7 +97,7 @@ module.exports = {
     'vue/max-attributes-per-line': [
       1,
       {
-        singleline: 2,
+        singleline: 3,
         multiline: {
           max: 1,
           allowFirstLine: false
