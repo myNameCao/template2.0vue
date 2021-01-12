@@ -3,9 +3,12 @@
 const path = require('path')
 // const env = process.env.VUE_APP_ENV
 module.exports = {
+  devServer: {
+    disableHostCheck: true
+  },
   productionSourceMap: false, // vueEnv === 'Beta' || process.env.NODE_ENV !== 'production',
   publicPath: '/',
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     config.resolve.alias
       .set('@', path.resolve(__dirname, 'src'))
       .set('@view', path.resolve(__dirname, 'src/views'))
@@ -19,7 +22,8 @@ module.exports = {
   css: {
     extract: false,
     sourceMap: false,
-    loaderOptions: { // 向 CSS 相关的 loader 传递选项
+    loaderOptions: {
+      // 向 CSS 相关的 loader 传递选项
       less: {
         javascriptEnabled: true
       }

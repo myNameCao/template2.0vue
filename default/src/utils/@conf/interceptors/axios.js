@@ -1,22 +1,33 @@
 import Cookies from 'js-cookie'
-import baseApi from '@lib/baseApi'
+import baseApi from '@lib/api'
 import Toast, { loading, clearTip } from '@utils/xyui'
 import errorHander from './errorHander'
 let uid = 0
-let list = {}
+let list = []
 // Add a request interceptor
 export const requestSuccess = res => {
+  res.method = res.type || 'get'
+  res.params = res.params || null
+  res.data = res.data || null
+  res.host = res.host || 'defaulteApi'
+
   if (res.loading) {
     res.uid = uid++
-    if (!Object.keys(list).length) {
-      loading()
-    }
+    list.push(res.uid)
   }
-  list[res.uid] = true
-  if (baseApi.privatePath[res.url]) {
+  list.length && loading()
+  let urlconfig = baseApi[res.host]
+  urlconfig.host = null
+  if (window.config && window.config[res.host]) {
+    urlconfig.host = window.config[res.host]
+  }
+  let { host, path, withCredentials, token } = urlconfig
+  res.token = res.token || token || true
+  res.withCredentials = res.withCredentials || withCredentials || false
+  if (res.token) {
     res.headers['token'] = Cookies.get('USER_LOGIN_NAME')
   }
-  res.url = baseApi.privatePath[res.url] || baseApi.publicPath[res.url]
+  res.url = host + path[res.url]
   return res
 }
 export const requestFail = requestError => {
@@ -27,17 +38,18 @@ export const requestFail = requestError => {
 // Add a response interceptor
 
 export const responseSuccess = responseObj => {
-  delete list[responseObj.config.uid]
-  if (!Object.keys(list).length) {
-    setTimeout(clearTip, 1000)
-  }
-  if (!responseObj.data.success) {
-    setTimeout(Toast.fail(responseObj.data.msg), 1500)
+  list.splice(list.indexOf(responseObj.config.uid), 1)
+  !list.length && clearTip()
+  // setTimeout(clearTip, 500)
+  if (responseObj.data.success === false || responseObj.data.status === false) {
+    if (!responseObj.config.noTip)
+      setTimeout(Toast.fail(responseObj.data.msg), 1500)
   }
   return responseObj.data
 }
 export const responseFail = responseError => {
-  delete list[responseError.config.uid]
+  list.splice(list.indexOf(responseError.config.uid), 1)
+  !list.length && clearTip()
   // 响应失败，可根据 responseError.message 和 responseError.response.status 来做监控处理
   clearTip()
   let Fail = errorHander[responseError.response.status]
