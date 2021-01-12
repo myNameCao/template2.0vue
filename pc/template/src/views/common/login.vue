@@ -134,6 +134,7 @@
           remember: true
         }
         axios({
+          host: 'userApi',
           type: 'post',
           url: 'login',
           loading: true,
