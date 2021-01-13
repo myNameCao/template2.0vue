@@ -36,7 +36,6 @@ export const requestFail = requestError => {
   return Promise.reject(requestError)
 }
 // Add a response interceptor
-
 export const responseSuccess = responseObj => {
   list.splice(list.indexOf(responseObj.config.uid), 1)
   !list.length && clearTip()
