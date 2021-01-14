@@ -10,7 +10,6 @@ export const requestSuccess = res => {
   res.params = res.params || null
   res.data = res.data || null
   res.host = res.host || 'defaulteApi'
-
   if (res.loading) {
     res.uid = uid++
     list.push(res.uid)
@@ -22,8 +21,9 @@ export const requestSuccess = res => {
     urlconfig.host = window.config[res.host]
   }
   let { host, path, withCredentials, token } = urlconfig
-  res.token = res.token || token || true
-  res.withCredentials = res.withCredentials || withCredentials || false
+  res.token = typeof res.token === 'undefined' ? token : res.token
+  res.withCredentials =
+    typeof res.withCredentials === 'undefined' || withCredentials
   if (res.token) {
     res.headers['token'] = Cookies.get('USER_LOGIN_NAME')
   }
