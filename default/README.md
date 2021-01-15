@@ -6,6 +6,7 @@ yarn or npm install
 
 1. Prettier - Code formatter
 2. Git History
+3. eslint
 
 ## Compiles and hot-reloads for development
 
