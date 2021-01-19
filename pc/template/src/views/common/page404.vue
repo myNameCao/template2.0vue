@@ -10,9 +10,7 @@
   // import axios, { setCookie } from '@utils'
   export default {
     data() {
-      return {
-        url: img404
-      }
+      return {}
     },
 
     mounted() {}
