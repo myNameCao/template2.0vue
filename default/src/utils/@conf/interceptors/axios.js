@@ -43,8 +43,10 @@ export const responseSuccess = responseObj => {
   !list.length && clearTip()
   // setTimeout(clearTip, 500)
   if (responseObj.data.success === false || responseObj.data.status === false) {
-    if (!responseObj.config.noTip)
+    if (!responseObj.config.noTip) {
       setTimeout(Toast.fail(responseObj.data.msg), 1500)
+    }
+    return Promise.reject(responseObj.data)
   }
   return responseObj.data
 }
@@ -52,7 +54,6 @@ export const responseFail = responseError => {
   list.splice(list.indexOf(responseError.config.uid), 1)
   !list.length && clearTip()
   // 响应失败，可根据 responseError.message 和 responseError.response.status 来做监控处理
-  clearTip()
   let Fail = errorHander[responseError.response.status]
   Fail && Fail()
   return Promise.reject(responseError)
