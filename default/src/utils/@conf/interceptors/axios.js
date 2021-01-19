@@ -23,7 +23,7 @@ export const requestSuccess = res => {
   let { host, path, withCredentials, token } = urlconfig
   res.token = typeof res.token === 'undefined' ? token : res.token
   res.withCredentials =
-    typeof res.withCredentials === 'undefined' || withCredentials
+    typeof res.withCredentials === 'undefined' || res.withCredentials
   if (res.token) {
     res.headers['token'] = Cookies.get('USER_LOGIN_NAME')
   }
