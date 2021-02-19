@@ -140,7 +140,7 @@
           loading: true,
           data
         }).then(res => {
-          setCookie('USER_LOGIN_NAME', res.data.Token)
+          setCookie('USER_LOGIN_NAME', res.token)
           _this.$router.push('/yunQuestion')
         })
       }

@@ -16,10 +16,6 @@ export const requestSuccess = res => {
   }
   list.length && loading()
   let urlconfig = baseApi[res.host]
-  urlconfig.host = null
-  if (window.config && window.config[res.host]) {
-    urlconfig.host = window.config[res.host]
-  }
   let { host, path, withCredentials, token } = urlconfig
   res.token = typeof res.token === 'undefined' ? token : res.token
   res.withCredentials =
