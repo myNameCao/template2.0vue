@@ -21,10 +21,14 @@ if (!window.__POWERED_BY_QIANKUN__) {
   render()
 }
 export async function bootstrap() {
+  /* eslint-disable */
   console.log('[vue] vue app bootstraped')
+  /* eslint-enable */
 }
 export async function mount(props) {
+  /* eslint-disable */
   console.log('[vue] props from main framework', props)
+  /* eslint-enable */
   render(props)
 }
 export async function unmount() {
