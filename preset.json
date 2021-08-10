@@ -12,5 +12,5 @@
     }
   },
   "vueVersion": "2",
-  "cssPreprocessor": "less"
+  "cssPreprocessor": "dart-sass"
 }
