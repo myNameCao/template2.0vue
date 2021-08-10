@@ -1,0 +1,161 @@
+/**背景色**/
+.bg-white {
+  background-color: #fff;
+}
+/** 相对属性 **/
+.relative {
+  position: relative;
+}
+
+/**绝对属性**/
+.absolute {
+  position: absolute;
+}
+
+/**浮动控制**/
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+/** 内外边距 start **/
+$pmValArr: 5, 10, 20, 30, 40, 50, 60;
+$pmNameArr: (
+    key: pt,
+    value: padding-top
+  ),
+  (
+    key: pr,
+    value: padding-right
+  ),
+  (
+    key: pb,
+    value: padding-bottom
+  ),
+  (
+    key: pl,
+    value: padding-left
+  ),
+  (
+    key: mt,
+    value: margin-top
+  ),
+  (
+    key: mr,
+    value: margin-right
+  ),
+  (
+    key: mb,
+    value: margin-bottom
+  ),
+  (
+    key: ml,
+    value: margin-left
+  );
+
+@each $item in $pmNameArr {
+  @each $keyb in $pmValArr {
+    .#{map-get($item, key)}#{$keyb} {
+      #{map-get($item, value)}: $keyb + px;
+    }
+  }
+}
+/** 内外边距 end **/
+
+/** 字体大小控制 start **/
+$ftVal: 12, 14, 16, 18, 20, 22, 24, 26, 28;
+@each $item in $ftVal {
+  .ft-#{$item} {
+    font-size: $item + px;
+  }
+}
+/** 字体大小控制 end **/
+
+/** 用户行为操作 **/
+.select-no {
+  user-select: none;
+}
+/** xY轴居中 **/
+.yAuto {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.xYAuto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/** 块元素控制 **/
+.none {
+  display: none;
+}
+
+/** 宽控制 start **/
+$wVal: 70, 80, 90, 100;
+@each $item in $wVal {
+  .w#{$item} {
+    width: $item + '%';
+  }
+}
+/** 宽控制 end **/
+
+/**高控制**/
+.h100 {
+  height: 100%;
+}
+/**浮动**/
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+/**文本控制**/
+.ta-l {
+  text-align: left;
+}
+.ta-c {
+  text-align: center;
+}
+.ta-r {
+  text-align: right;
+}
+
+/**外边距控制**/
+.m-auto {
+  margin: 0 auto;
+}
+
+/** 鼠标控制 **/
+.pointer {
+  cursor: pointer;
+}
+
+/** card css */
+.card-box-shadow {
+  box-shadow: 0 1px 4px #ccc;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/**页面内容**/
+.page-content {
+  padding: 20px;
+  margin: 20px;
+}
+
+/** 颜色 **/
+.grey {
+  color: #999;
+}
+
+/** 文本换行**/
+.text-break {
+  word-wrap: break-word;
+}

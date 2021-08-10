@@ -1,9 +1,0 @@
-{
-  "urls": [
-    {
-      "webUrL": "http://chris.xycxedu.cn:8080",
-      "defaulteApi": "http://qaxyexamapi.xycxedu.cn:16580",
-      "userApi": "http://qacenterapi.xycxedu.cn:16580"
-    }
-  ]
-}

@@ -1,7 +1,7 @@
 <template>
   <div class="login-div">
     <div class="login-top">
-      <h2 class="title">
+      <h2 class="title ft-20">
         模版
       </h2>
     </div>
@@ -147,19 +147,14 @@
     }
   }
 </script>
-<style scoped>
+
+<style lang="scss" scoped>
   .login-div {
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    position: fixed;
-    /* background: url(../../static/img/bg.jpg); */
-    background-color: #409eff;
-    background-size: 100% 100%;
+    background-color: $d_color;
   }
   .title {
-    font-size: 25px;
     font-weight: 500;
   }
   .login-top {
