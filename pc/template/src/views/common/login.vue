@@ -147,15 +147,14 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .login-div {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     position: fixed;
-    /* background: url(../../static/img/bg.jpg); */
-    background-color: #409eff;
+    background-color: $default_color;
     background-size: 100% 100%;
   }
   .title {

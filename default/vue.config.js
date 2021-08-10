@@ -33,9 +33,8 @@ module.exports = {
     extract: false,
     sourceMap: false,
     loaderOptions: {
-      // 向 CSS 相关的 loader 传递选项
-      less: {
-        javascriptEnabled: true
+      sass: {
+        prependData: `@import "@static/styles/scss/_variables.scss";`
       }
     }
   }
