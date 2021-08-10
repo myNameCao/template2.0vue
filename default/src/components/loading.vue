@@ -13,7 +13,7 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="sass" scoped>
   .shodow {
     position: fixed;
     top: 0;
