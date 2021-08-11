@@ -1,9 +1,10 @@
 <template>
   <div class="login-div">
-    <div class="login-top">
-      <h2 class="title">
+    <div class="login-top xy-row">
+      <div class="title ft-12 xy-col-12">
         模版
-      </h2>
+      </div>
+      <div class="xy-col-6 ml20">nihao</div>
     </div>
     <form class="form">
       <input style="display: none" type="text" name="fakeusernameremembered" />
@@ -154,19 +155,14 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background-color: $default_color;
+    background: $default_color;
     background-size: 100% 100%;
   }
   .title {
-    font-size: 25px;
     font-weight: 500;
   }
   .login-top {
-    width: 100%;
     height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-bottom: 1px solid #ccd0d2;
   }
 
@@ -177,12 +173,6 @@
     padding: 0 10px;
     border-right: 1px solid white;
   }
-
-  h2 {
-    color: white;
-    padding-left: 20px;
-  }
-
   .login-top > span {
     color: white;
     font-size: 14px;
