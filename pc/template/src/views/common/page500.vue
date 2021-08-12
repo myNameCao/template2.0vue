@@ -14,7 +14,7 @@
     mounted() {}
   }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
   .page_sigle {
     width: 100%;
     height: 100%;
