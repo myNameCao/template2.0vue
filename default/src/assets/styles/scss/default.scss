@@ -1,5 +1,5 @@
-@import './variables';
 @use "sass:math";
+@import './variables';
 /**背景色 **/
 @each $theme, $config in $themes {
   .#{$theme} {
