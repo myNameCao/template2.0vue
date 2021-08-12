@@ -1,5 +1,5 @@
 @import './variables';
-
+@use "sass:math";
 /**背景色 **/
 @each $theme, $config in $themes {
   .#{$theme} {
@@ -67,17 +67,17 @@ $i: 28;
 }
 @for $i from 0 through 24 {
   .xy-col-#{$i} {
-    width: (1 / 24 * $i * 100) * 1%;
+    width: (math.div(1, 24) * $i * 100) * 1%;
   }
   .xy-ml-#{$i} {
-    margin-left: (1 / 24 * $i * 100) * 1%;
+    margin-left: (math.div(1, 24) * $i * 100) * 1%;
   }
   .xy-pr-#{$i} {
     position: relative;
-    right: (1 / 24 * $i * 100) * 1%;
+    right: (math.div(1, 24) * $i * 100) * 1%;
   }
   .xy-pl-#{$i} {
     position: relative;
-    left: (1 / 24 * $i * 100) * 1%;
+    left: (math.div(1, 24) * $i * 100) * 1%;
   }
 }
