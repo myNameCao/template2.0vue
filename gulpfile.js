@@ -12,7 +12,6 @@ const copy = path => {
   } else {
     return src(path).pipe(dest('default' + distPash))
   }
-  console.log(allFile)
 }
 const delfile = path => {
   let allFile = path.split('/')

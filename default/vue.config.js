@@ -34,9 +34,13 @@ module.exports = {
     sourceMap: false,
     loaderOptions: {
       sass: {
+<<<<<<< HEAD
         prependData: `
          @import "@static/styles/scss/_variables.scss";
         `
+=======
+        // prependData: `@import "@static/styles/scss/_variables.scss";`
+>>>>>>> sass
       }
     }
   }
