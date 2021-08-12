@@ -9,8 +9,8 @@
 }
 
 /** 内外边距 start **/
-$pmValArr: 6, 12, 24, 36, 48, 60, 72;
-$pmNameArr: (
+$sizes: 6, 12, 24, 36, 48, 60, 72;
+$pmArrs: (
   pt: padding-top,
   pr: padding-right,
   pb: padding-bottom,
@@ -21,10 +21,10 @@ $pmNameArr: (
   ml: margin-left
 );
 
-@each $key, $value in $pmNameArr {
-  @each $keyb in $pmValArr {
-    .#{$key}#{$keyb} {
-      #{$value}: $keyb + px;
+@each $key, $value in $pmArrs {
+  @each $size in $sizes {
+    .#{$key}#{$size} {
+      #{$value}: $size + px;
     }
   }
 }
