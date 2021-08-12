@@ -5,12 +5,6 @@
         模版
       </div>
     </div>
-    <div class="sk-default .card">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
     <form class="form">
       <input style="display: none" type="text" name="fakeusernameremembered" />
       <input
@@ -154,6 +148,10 @@
   }
 </script>
 <style lang="scss" scoped>
+  .i {
+    height: 40px;
+    margin: 10px;
+  }
   .login-div {
     top: 0;
     left: 0;
