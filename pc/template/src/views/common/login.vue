@@ -1,9 +1,15 @@
 <template>
-  <div class="login-div bg-blue">
+  <div class="login-div sk-blue">
     <div class="login-top  pl12">
       <div class="title ft-26 ">
         模版
       </div>
+    </div>
+    <div class="sk-default .card">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
     <form class="form">
       <input style="display: none" type="text" name="fakeusernameremembered" />

@@ -1,0 +1,7 @@
+@mixin w($size, $radius: 0) {
+  width: $size + px;
+  padding: 1em;
+  @if $radius != 0 {
+    border-radius: $radius + px;
+  }
+}

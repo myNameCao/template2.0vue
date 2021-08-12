@@ -1,15 +1,12 @@
-@import './variables';
+@import './_variables';
 
 /**背景色**/
-.bg-white {
-  background-color: $bg_color_while;
-  color: $font_color_black;
+@each $theme, $config in $themes {
+  .#{$theme} {
+    background: map-get($config, 'bg');
+    color: map-get($config, 'color');
+  }
 }
-.bg-blue {
-  background-color: $bg_color_blue;
-  color: $font_color_while;
-}
-
 /** 内外边距 start **/
 $pmValArr: 6, 12, 24, 36, 48, 60, 72;
 $pmNameArr: (
@@ -96,13 +93,20 @@ $i: 28;
   align-items: center;
   justify-content: flex-start;
 }
+//
+.xy-row-v {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 .xy-col-0 {
   @extend .none;
 }
 @for $i from 0 through 24 {
   .xy-col-#{$i} {
     width: (1 / 24 * $i * 100) * 1%;
-    height: 100%;
   }
   .xy-ml-#{$i} {
     margin-left: (1 / 24 * $i * 100) * 1%;
