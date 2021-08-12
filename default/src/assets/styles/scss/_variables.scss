@@ -1,4 +1,21 @@
-$bg_color_blue: #409eff;
-$bg_color_while: #fff;
-$font_color_while: #fff;
-$font_color_black: #000;
+$namespace: 'xy';
+$element-separator: '__';
+$modifier-separator: '--';
+$state-prefix: 'is-';
+
+// 定义主题
+
+$themes: (
+  sk-default: (
+    bg: #f7f8fb,
+    color: #888
+  ),
+  sk-blue: (
+    bg: #409eff,
+    color: #fff
+  ),
+  sk-mo: (
+    bg: #585756,
+    color: #fff
+  )
+);
