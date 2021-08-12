@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-/**背景色**/
-.bg-white {
-  background-color: #fff;
-}
-/** 相对属性 **/
-.relative {
-  position: relative;
-}
-
-/**绝对属性**/
-.absolute {
-  position: absolute;
-}
-
-/**浮动控制**/
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
-
-/** 内外边距 start **/
-$pmValArr: 5, 10, 20, 30, 40, 50, 60;
-=======
 @import './_variables';
 
 /**背景色**/
@@ -35,7 +9,6 @@ $pmValArr: 5, 10, 20, 30, 40, 50, 60;
 }
 /** 内外边距 start **/
 $pmValArr: 6, 12, 24, 36, 48, 60, 72;
->>>>>>> sass
 $pmNameArr: (
     key: pt,
     value: padding-top
@@ -79,20 +52,12 @@ $pmNameArr: (
 /** 内外边距 end **/
 
 /** 字体大小控制 start **/
-<<<<<<< HEAD
-$ftVal: 12, 14, 16, 18, 20, 22, 24, 26, 28;
-@each $item in $ftVal {
-  .ft-#{$item} {
-    font-size: $item + px;
-  }
-=======
 $i: 28;
 @while $i > 10 {
   .ft-#{$i} {
     font-size: $i + px;
   }
   $i: $i - 2;
->>>>>>> sass
 }
 /** 字体大小控制 end **/
 
@@ -100,42 +65,23 @@ $i: 28;
 .select-no {
   user-select: none;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> sass
 /** xY轴居中 **/
 .yAuto {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-<<<<<<< HEAD
-.xYAuto {
-=======
 .xyAuto {
->>>>>>> sass
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> sass
 /** 块元素控制 **/
 .none {
   display: none;
 }
 
-<<<<<<< HEAD
-/** 宽控制 start **/
-$wVal: 70, 80, 90, 100;
-@each $item in $wVal {
-  .w#{$item} {
-    width: $item + '%';
-=======
 /** 宽度  24 栅格布局 **/
 
 // 并列 需添加 父级class
@@ -170,7 +116,6 @@ $wVal: 70, 80, 90, 100;
   .xy-pl-#{$i} {
     position: relative;
     left: (1 / 24 * $i * 100) * 1%;
->>>>>>> sass
   }
 }
 /** 宽控制 end **/
@@ -180,17 +125,10 @@ $wVal: 70, 80, 90, 100;
   height: 100%;
 }
 /**浮动**/
-<<<<<<< HEAD
-.left {
-  float: left;
-}
-.right {
-=======
 .fl {
   float: left;
 }
 .fr {
->>>>>>> sass
   float: right;
 }
 /**文本控制**/
@@ -225,17 +163,7 @@ $wVal: 70, 80, 90, 100;
 
 /**页面内容**/
 .page-content {
-<<<<<<< HEAD
-  padding: 20px;
-  margin: 20px;
-}
-
-/** 颜色 **/
-.grey {
-  color: #999;
-=======
   padding: 12px;
->>>>>>> sass
 }
 
 /** 文本换行**/

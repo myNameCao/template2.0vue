@@ -2,11 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-<<<<<<< HEAD
-import '@static/styles/scss/default.scss'
-=======
 import '@static/styles/scss/index.scss'
->>>>>>> sass
 import '@static/styles/reset.css'
 import './public-path'
 import './iview'

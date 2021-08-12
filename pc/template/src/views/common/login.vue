@@ -1,13 +1,7 @@
 <template>
-<<<<<<< HEAD
-  <div class="login-div">
-    <div class="login-top">
-      <h2 class="title ft-20">
-=======
   <div class="login-div sk-blue">
     <div class="login-top  pl12">
       <div class="title ft-26 ">
->>>>>>> sass
         模版
       </div>
     </div>
@@ -153,25 +147,16 @@
     }
   }
 </script>
-<<<<<<< HEAD
-
-<style lang="scss" scoped>
-=======
 <style lang="scss" scoped>
   .i {
     height: 40px;
     margin: 10px;
   }
->>>>>>> sass
   .login-div {
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    background-color: $d_color;
-=======
     position: fixed;
     background-size: 100% 100%;
->>>>>>> sass
   }
   .title {
     font-weight: 500;
