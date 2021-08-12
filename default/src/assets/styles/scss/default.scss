@@ -1,7 +1,15 @@
+@import './variables';
+
 /**背景色**/
 .bg-white {
-  background-color: #fff;
+  background-color: $bg_color_while;
+  color: $font_color_black;
 }
+.bg-blue {
+  background-color: $bg_color_blue;
+  color: $font_color_while;
+}
+
 /** 内外边距 start **/
 $pmValArr: 6, 12, 24, 36, 48, 60, 72;
 $pmNameArr: (
@@ -60,6 +68,7 @@ $i: 28;
 .select-no {
   user-select: none;
 }
+
 /** xY轴居中 **/
 .yAuto {
   position: absolute;
@@ -72,6 +81,7 @@ $i: 28;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 /** 块元素控制 **/
 .none {
   display: none;
@@ -86,9 +96,8 @@ $i: 28;
   align-items: center;
   justify-content: flex-start;
 }
-
 .xy-col-0 {
-  display: none;
+  @extend .none;
 }
 @for $i from 0 through 24 {
   .xy-col-#{$i} {
@@ -153,11 +162,6 @@ $i: 28;
 /**页面内容**/
 .page-content {
   padding: 12px;
-}
-
-/** 颜色 **/
-.grey {
-  color: #999;
 }
 
 /** 文本换行**/

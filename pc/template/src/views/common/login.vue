@@ -1,10 +1,9 @@
 <template>
-  <div class="login-div">
-    <div class="login-top xy-row">
-      <div class="title ft-12 xy-col-12">
+  <div class="login-div bg-blue">
+    <div class="login-top  pl12">
+      <div class="title ft-26 ">
         模版
       </div>
-      <div class="xy-col-6 ml20">nihao</div>
     </div>
     <form class="form">
       <input style="display: none" type="text" name="fakeusernameremembered" />
@@ -155,7 +154,6 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: $default_color;
     background-size: 100% 100%;
   }
   .title {
