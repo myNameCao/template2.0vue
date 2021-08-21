@@ -27,6 +27,6 @@ if (!commitRE.test(msg)) {
 }
 
 if (!/@xiaoyangedu\.com$/.test(email)) {
-  console.error('此用户没有权限，具有权限的用户为： xxx@qq.com')
+  console.error('此用户没有权限，具有权限的用户为： xxx@xiaoyangedu.com')
   process.exit(1)
 }
