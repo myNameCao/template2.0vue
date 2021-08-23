@@ -9,6 +9,7 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage({
     // 命令
     scripts: {
+      preinstall: 'node ./scripts/checkYarn.js',
       formatCode: 'prettier --write src/**/*.{js,vue}',
       eslintCode: 'eslint --fix src/**/*.{js,vue}'
     },
