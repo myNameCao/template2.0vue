@@ -21,6 +21,7 @@ if (!commitRE.test(msg)) {
       )}\n\n` +
       chalk.red(
         '详情请查看 git commit 提交规范：https://github.com/woai3c/Front-end-articles/blob/master/git%20commit%20style.md'
+        )
       )
   )
   process.exit(1)
