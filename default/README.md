@@ -8,6 +8,10 @@ yarn or npm install
 2. Git History
 3. eslint
 
+## note
+
+本项目必须使用 yarn 下载依赖，已经做过校验
+
 ## Compiles and hot-reloads for development
 
 ```shell
