@@ -11,6 +11,7 @@ module.exports = (api, options, rootOptions) => {
     scripts: {
       preinstall: 'node ./scripts/checkYarn.js',
       formatCode: 'prettier --write src/**/*.{js,vue}',
+      changelog: 'conventional-changelog -p angular -i CHANGELOG.md -s',
       eslintCode: 'eslint --fix src/**/*.{js,vue}'
     },
     dependencies: {
@@ -20,6 +21,7 @@ module.exports = (api, options, rootOptions) => {
     },
     devDependencies: {
       husky: '^4.3.0',
+      'conventional-changelog-cli': '^2.1.1',
       'lint-staged': '^10.4.2'
     }
   })
