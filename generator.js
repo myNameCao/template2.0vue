@@ -11,6 +11,7 @@ module.exports = (api, options, rootOptions) => {
     scripts: {
       preinstall: 'node ./scripts/checkYarn.js',
       formatCode: 'prettier --write src/**/*.{js,vue}',
+      release: 'node ./scripts/release.js',
       changelog: 'conventional-changelog -p angular -i CHANGELOG.md -s',
       eslintCode: 'eslint --fix src/**/*.{js,vue}'
     },
